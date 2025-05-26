@@ -1,0 +1,174 @@
+{
+  "en": {
+    "title": "Lilo and Stitch | HD Image Generator",
+    "description": "Simple, fast, easy and free high-definition Lilo and Stitch image and video generator",
+    "header": {
+      "home": "Home",
+      "gallery": "Gallery",
+      "generator": "HD Generator",
+      "about": "About"
+    },
+    "hero": {
+      "title": "Lilo and Stitch HD Image Generator",
+      "subtitle": "Simple, fast, easy and free high-definition Lilo and Stitch image and video generator",
+      "cta": "Generate Now"
+    },
+    "generator": {
+      "title": "Generate HD Images",
+      "description": "Upload your Lilo and Stitch image to enhance it to high definition",
+      "upload_btn": "Upload Image",
+      "generate_btn": "Generate HD Image",
+      "download_btn": "Download",
+      "processing": "Processing...",
+      "drop_text": "Drop your image here or click to browse"
+    },
+    "gallery": {
+      "title": "Lilo and Stitch Gallery",
+      "description": "Explore our collection of high-definition Lilo and Stitch images",
+      "more_btn": "Load More"
+    },
+    "about": {
+      "title": "About This Project",
+      "description": "This website uses advanced AI technology to enhance Lilo and Stitch images to high definition. The service is completely free and easy to use.",
+      "features": [
+        "High-quality upscaling",
+        "Fast processing",
+        "Simple interface",
+        "Free to use"
+      ]
+    },
+    "footer": {
+      "copyright": "© 2025 lilo-stitch.art. All rights reserved.",
+      "language": "Language"
+    }
+  },
+  "fr": {
+    "title": "Lilo et Stitch | Générateur d'Images HD",
+    "description": "Générateur d'images et de vidéos Lilo et Stitch en haute définition simple, rapide, facile et gratuit",
+    "header": {
+      "home": "Accueil",
+      "gallery": "Galerie",
+      "generator": "Générateur HD",
+      "about": "À Propos"
+    },
+    "hero": {
+      "title": "Générateur d'Images HD Lilo et Stitch",
+      "subtitle": "Générateur d'images et de vidéos Lilo et Stitch en haute définition simple, rapide, facile et gratuit",
+      "cta": "Générer Maintenant"
+    },
+    "generator": {
+      "title": "Générer des Images HD",
+      "description": "Téléchargez votre image Lilo et Stitch pour l'améliorer en haute définition",
+      "upload_btn": "Télécharger une Image",
+      "generate_btn": "Générer une Image HD",
+      "download_btn": "Télécharger",
+      "processing": "Traitement en cours...",
+      "drop_text": "Déposez votre image ici ou cliquez pour parcourir"
+    },
+    "gallery": {
+      "title": "Galerie Lilo et Stitch",
+      "description": "Explorez notre collection d'images Lilo et Stitch en haute définition",
+      "more_btn": "Charger Plus"
+    },
+    "about": {
+      "title": "À Propos de Ce Projet",
+      "description": "Ce site utilise une technologie d'IA avancée pour améliorer les images de Lilo et Stitch en haute définition. Le service est totalement gratuit et facile à utiliser.",
+      "features": [
+        "Mise à l'échelle de haute qualité",
+        "Traitement rapide",
+        "Interface simple",
+        "Gratuit à utiliser"
+      ]
+    },
+    "footer": {
+      "copyright": "© 2025 lilo-stitch.art. Tous droits réservés.",
+      "language": "Langue"
+    }
+  },
+  "de": {
+    "title": "Lilo und Stitch | HD-Bildgenerator",
+    "description": "Einfacher, schneller, unkomplizierter und kostenloser Hochauflösungs-Lilo und Stitch Bild- und Videogenerator",
+    "header": {
+      "home": "Startseite",
+      "gallery": "Galerie",
+      "generator": "HD-Generator",
+      "about": "Über Uns"
+    },
+    "hero": {
+      "title": "Lilo und Stitch HD-Bildgenerator",
+      "subtitle": "Einfacher, schneller, unkomplizierter und kostenloser Hochauflösungs-Lilo und Stitch Bild- und Videogenerator",
+      "cta": "Jetzt Generieren"
+    },
+    "generator": {
+      "title": "HD-Bilder Generieren",
+      "description": "Laden Sie Ihr Lilo und Stitch Bild hoch, um es in hoher Auflösung zu verbessern",
+      "upload_btn": "Bild Hochladen",
+      "generate_btn": "HD-Bild Generieren",
+      "download_btn": "Herunterladen",
+      "processing": "Verarbeitung...",
+      "drop_text": "Ziehen Sie Ihr Bild hierher oder klicken Sie zum Durchsuchen"
+    },
+    "gallery": {
+      "title": "Lilo und Stitch Galerie",
+      "description": "Entdecken Sie unsere Sammlung hochauflösender Lilo und Stitch Bilder",
+      "more_btn": "Mehr Laden"
+    },
+    "about": {
+      "title": "Über Dieses Projekt",
+      "description": "Diese Website verwendet fortschrittliche KI-Technologie, um Lilo und Stitch Bilder in hoher Auflösung zu verbessern. Der Service ist völlig kostenlos und einfach zu bedienen.",
+      "features": [
+        "Hochwertige Skalierung",
+        "Schnelle Verarbeitung",
+        "Einfache Benutzeroberfläche",
+        "Kostenlos nutzbar"
+      ]
+    },
+    "footer": {
+      "copyright": "© 2025 lilo-stitch.art. Alle Rechte vorbehalten.",
+      "language": "Sprache"
+    }
+  },
+  "hi": {
+    "title": "लीलो और स्टिच | एचडी छवि जनरेटर",
+    "description": "सरल, तेज़, आसान और मुफ्त उच्च-परिभाषा लीलो और स्टिच छवि और वीडियो जनरेटर",
+    "header": {
+      "home": "होम",
+      "gallery": "गैलरी",
+      "generator": "एचडी जनरेटर",
+      "about": "हमारे बारे में"
+    },
+    "hero": {
+      "title": "लीलो और स्टिच एचडी छवि जनरेटर",
+      "subtitle": "सरल, तेज़, आसान और मुफ्त उच्च-परिभाषा लीलो और स्टिच छवि और वीडियो जनरेटर",
+      "cta": "अभी जनरेट करें"
+    },
+    "generator": {
+      "title": "एचडी छवियां जनरेट करें",
+      "description": "अपनी लीलो और स्टिच छवि को उच्च परिभाषा में बढ़ाने के लिए अपलोड करें",
+      "upload_btn": "छवि अपलोड करें",
+      "generate_btn": "एचडी छवि जनरेट करें",
+      "download_btn": "डाउनलोड करें",
+      "processing": "प्रोसेसिंग...",
+      "drop_text": "अपनी छवि यहां ड्रॉप करें या ब्राउज़ करने के लिए क्लिक करें"
+    },
+    "gallery": {
+      "title": "लीलो और स्टिच गैलरी",
+      "description": "हमारे उच्च-परिभाषा लीलो और स्टिच छवियों के संग्रह का अन्वेषण करें",
+      "more_btn": "और लोड करें"
+    },
+    "about": {
+      "title": "इस प्रोजेक्ट के बारे में",
+      "description": "यह वेबसाइट लीलो और स्टिच छवियों को उच्च परिभाषा में बढ़ाने के लिए उन्नत एआई तकनीक का उपयोग करती है। यह सेवा पूरी तरह से मुफ्त और उपयोग में आसान है।",
+      "features": [
+        "उच्च-गुणवत्ता वाला अपस्केलिंग",
+        "तेज़ प्रोसेसिंग",
+        "सरल इंटरफेस",
+        "उपयोग करने के लिए मुफ्त"
+      ]
+    },
+    "footer": {
+      "copyright": "© 2025 lilo-stitch.art. सर्वाधिकार सुरक्षित।",
+      "language": "भाषा"
+    }
+  }
+}

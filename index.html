@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="title">Lilo and Stitch | HD Image Generator</title>
+    <meta name="description" data-i18n="description" content="Simple, fast, easy and free high-definition Lilo and Stitch image and video generator">
+    <link rel="canonical" href="https://lilo-stitch.art/">
+    <meta name="keywords" content="lilo and stitch, HD image generator, high definition, image upscaler, stitch, lilo, disney, cartoon">
+    <meta property="og:title" content="Lilo and Stitch | HD Image Generator">
+    <meta property="og:description" content="Simple, fast, easy and free high-definition Lilo and Stitch image and video generator">
+    <meta property="og:url" content="https://lilo-stitch.art/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://lilo-stitch.art/images/lilo_stitch_beach.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lilo and Stitch | HD Image Generator">
+    <meta name="twitter:description" content="Simple, fast, easy and free high-definition Lilo and Stitch image and video generator">
+    <meta name="twitter:image" content="https://lilo-stitch.art/images/lilo_stitch_beach.jpeg">
+    <link rel="alternate" hreflang="en" href="https://lilo-stitch.art/?lang=en">
+    <link rel="alternate" hreflang="fr" href="https://lilo-stitch.art/?lang=fr">
+    <link rel="alternate" hreflang="de" href="https://lilo-stitch.art/?lang=de">
+    <link rel="alternate" hreflang="hi" href="https://lilo-stitch.art/?lang=hi">
+    <link rel="alternate" hreflang="x-default" href="https://lilo-stitch.art/">
+    <link rel="icon" href="images/lilo_stitch_bubble.jpeg" type="image/jpeg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // 苹果风格配色
+                        'apple-blue': '#007AFF',
+                        'apple-green': '#34C759',
+                        'apple-indigo': '#5856D6',
+                        'apple-orange': '#FF9500',
+                        'apple-pink': '#FF2D55',
+                        'apple-purple': '#AF52DE',
+                        'apple-red': '#FF3B30',
+                        'apple-teal': '#5AC8FA',
+                        'apple-yellow': '#FFCC00',
+                        'apple-gray': '#8E8E93',
+                        'apple-gray-2': '#AEAEB2',
+                        'apple-gray-3': '#C7C7CC',
+                        'apple-gray-4': '#D1D1D6',
+                        'apple-gray-5': '#E5E5EA',
+                        'apple-gray-6': '#F2F2F7',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+        .language-selector {
+            position: relative;
+        }
+        .language-dropdown {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            z-index: 50;
+            min-width: 120px;
+        }
+        .language-selector:hover .language-dropdown {
+            display: block;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #5AC8FA 0%, #AF52DE 100%);
+        }
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+        .image-container:hover {
+            transform: scale(1.03);
+        }
+        .dropzone {
+            border: 2px dashed #C7C7CC;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        .dropzone:hover, .dropzone.active {
+            border-color: #007AFF;
+            background-color: rgba(0, 122, 255, 0.05);
+        }
+        .btn-primary {
+            background-color: #007AFF;
+            color: white;
+            border-radius: 8px;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        .btn-primary:hover {
+            background-color: #0062CC;
+            transform: translateY(-1px);
+        }
+        .btn-secondary {
+            background-color: #F2F2F7;
+            color: #007AFF;
+            border-radius: 8px;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        .btn-secondary:hover {
+            background-color: #E5E5EA;
+            transform: translateY(-1px);
+        }
+        .feature-card {
+            border-radius: 12px;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-apple-gray-6 text-gray-800">
+    <!-- 导航栏 -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <img src="images/lilo_stitch_bubble.jpeg" alt="Lilo and Stitch" class="w-10 h-10 rounded-full object-cover">
+                <span class="font-bold text-xl text-apple-blue">Lilo & Stitch</span>
+            </a>
+            
+            <nav class="hidden md:flex space-x-6">
+                <a href="#" class="font-medium text-apple-blue" data-i18n="header.home">Home</a>
+                <a href="#gallery" class="font-medium text-gray-600 hover:text-apple-blue transition-colors" data-i18n="header.gallery">Gallery</a>
+                <a href="#generator" class="font-medium text-gray-600 hover:text-apple-blue transition-colors" data-i18n="header.generator">HD Generator</a>
+                <a href="#about" class="font-medium text-gray-600 hover:text-apple-blue transition-colors" data-i18n="header.about">About</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <div class="language-selector">
+                    <button class="flex items-center space-x-1 text-gray-600 hover:text-apple-blue">
+                        <span id="current-language">EN</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="language-dropdown">
+                        <a href="#" class="block px-4 py-2 hover:bg-apple-gray-6 language-option" data-lang="en">English</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-apple-gray-6 language-option" data-lang="fr">Français</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-apple-gray-6 language-option" data-lang="de">Deutsch</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-apple-gray-6 language-option" data-lang="hi">हिन्दी</a>
+                    </div>
+                </div>
+                
+                <button class="md:hidden" id="mobile-menu-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- 移动端菜单 -->
+        <div class="md:hidden hidden bg-white pb-4 px-4" id="mobile-menu">
+            <a href="#" class="block py-2 font-medium text-apple-blue" data-i18n="header.home">Home</a>
+            <a href="#gallery" class="block py-2 font-medium text-gray-600" data-i18n="header.gallery">Gallery</a>
+            <a href="#generator" class="block py-2 font-medium text-gray-600" data-i18n="header.generator">HD Generator</a>
+            <a href="#about" class="block py-2 font-medium text-gray-600" data-i18n="header.about">About</a>
+        </div>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section class="hero-gradient text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6" data-i18n="hero.title">Lilo and Stitch HD Image Generator</h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto mb-10 opacity-90" data-i18n="hero.subtitle">Simple, fast, easy and free high-definition Lilo and Stitch image and video generator</p>
+            <a href="#generator" class="btn-primary inline-block" data-i18n="hero.cta">Generate Now</a>
+        </div>
+    </section>
+
+    <!-- 图片库 -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4" data-i18n="gallery.title">Lilo and Stitch Gallery</h2>
+            <p class="text-xl text-gray-600 text-center max-w-3xl mx-auto mb-12" data-i18n="gallery.description">Explore our collection of high-definition Lilo and Stitch images</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="image-container">
+                    <img src="images/lilo_stitch_beach.jpeg" alt="Lilo and Stitch on the beach" class="w-full h-64 object-cover">
+                </div>
+                <div class="image-container">
+                    <img src="images/lilo_stitch_pink.jpeg" alt="Stitch on pink background" class="w-full h-64 object-cover">
+                </div>
+                <div class="image-container">
+                    <img src="images/lilo_stitch_bubble.jpeg" alt="Stitch with bubble" class="w-full h-64 object-cover">
+                </div>
+                <div class="image-container">
+                    <img src="images/lilo_stitch_hula.jpeg" alt="Lilo and Stitch hula dancing" class="w-full h-64 object-cover">
+                </div>
+                <!-- 更多图片将在后续添加 -->
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="btn-secondary" data-i18n="gallery.more_btn">Load More</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 生成器 -->
+    <section id="generator" class="py-20 bg-apple-gray-6">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4" data-i18n="generator.title">Generate HD Images</h2>
+            <p class="text-xl text-gray-600 text-center max-w-3xl mx-auto mb-12" data-i18n="generator.description">Upload your Lilo and Stitch image to enhance it to high definition</p>
+            
+            <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-md p-6 md:p-8">
+                <div class="dropzone h-64 flex flex-col items-center justify-center cursor-pointer mb-6" id="dropzone">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-apple-gray-3 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                    </svg>
+                    <p class="text-gray-500 text-center" data-i18n="generator.drop_text">Drop your image here or click to browse</p>
+                    <input type="file" id="file-input" class="hidden" accept="image/*">
+                </div>
+                
+                <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+                    <button class="btn-secondary flex-1" data-i18n="generator.upload_btn">Upload Image</button>
+                    <button class="btn-primary flex-1" id="generate-btn" data-i18n="generator.generate_btn">Generate HD Image</button>
+                </div>
+                
+                <div class="mt-8 hidden" id="result-container">
+                    <div class="border-t border-gray-200 pt-6">
+                        <h3 class="text-xl font-semibold mb-4">Result</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <p class="text-sm text-gray-500 mb-2">Original</p>
+                                <img src="" alt="Original image" id="original-image" class="w-full rounded-lg">
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-2">Enhanced</p>
+                                <img src="" alt="Enhanced image" id="enhanced-image" class="w-full rounded-lg">
+                            </div>
+                        </div>
+                        <div class="mt-6 text-center">
+                            <button class="btn-primary" id="download-btn" data-i18n="generator.download_btn">Download</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 视频展示 -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Lilo and Stitch Videos</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="aspect-w-16 aspect-h-9">
+                    <iframe class="w-full h-64 md:h-80 rounded-xl" src="https://www.youtube.com/embed/EuEnH4Mb6iI" title="Stitch's Cutest Moments!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="aspect-w-16 aspect-h-9">
+                    <iframe class="w-full h-64 md:h-80 rounded-xl" src="https://www.youtube.com/embed/GYy68npQrpU" title="Lilo Meets Stitch for the First Time!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于 -->
+    <section id="about" class="py-20 bg-apple-gray-6">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4" data-i18n="about.title">About This Project</h2>
+            <p class="text-xl text-gray-600 text-center max-w-3xl mx-auto mb-12" data-i18n="about.description">This website uses advanced AI technology to enhance Lilo and Stitch images to high definition. The service is completely free and easy to use.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="feature-card p-6">
+                    <div class="bg-apple-blue bg-opacity-10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-apple-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">High-quality upscaling</h3>
+                    <p class="text-gray-600">Our AI enhances image details while preserving the original style.</p>
+                </div>
+                
+                <div class="feature-card p-6">
+                    <div class="bg-apple-green bg-opacity-10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-apple-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Fast processing</h3>
+                    <p class="text-gray-600">Get your enhanced images in seconds, not minutes.</p>
+                </div>
+                
+                <div class="feature-card p-6">
+                    <div class="bg-apple-purple bg-opacity-10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-apple-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Simple interface</h3>
+                    <p class="text-gray-600">Just upload, click, and download. No complicated settings.</p>
+                </div>
+                
+                <div class="feature-card p-6">
+                    <div class="bg-apple-orange bg-opacity-10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-apple-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">Free to use</h3>
+                    <p class="text-gray-600">No hidden fees or subscriptions. Completely free.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="flex items-center space-x-2">
+                        <img src="images/lilo_stitch_bubble.jpeg" alt="Lilo and Stitch" class="w-10 h-10 rounded-full object-cover">
+                        <span class="font-bold text-xl">Lilo & Stitch</span>
+                    </a>
+                    <p class="mt-2 text-gray-400" data-i18n="footer.copyright">© 2025 lilo-stitch.art. All rights reserved.</p>
+                </div>
+                
+                <div class="flex flex-col items-center md:items-end">
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <div class="language-selector">
+                        <button class="flex items-center space-x-1 text-gray-400 hover:text-white">
+                            <span data-i18n="footer.language">Language</span>
+                            <span id="footer-current-language">EN</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <div class="language-dropdown">
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-800 language-option" data-lang="en">English</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-800 language-option" data-lang="fr">Français</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-800 language-option" data-lang="de">Deutsch</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-800 language-option" data-lang="hi">हिन्दी</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 多语言和交互脚本 -->
+    <script>
+        // 移动端菜单切换
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 多语言支持
+        let translations = {};
+        let currentLanguage = 'en';
+
+        // 加载翻译文件
+        async function loadTranslations() {
+            try {
+                const response = await fetch('languages/translations.json');
+                translations = await response.json();
+                setLanguage(currentLanguage);
+            } catch (error) {
+                console.error('Failed to load translations:', error);
+            }
+        }
+
+        // 设置语言
+        function setLanguage(lang) {
+            if (!translations[lang]) return;
+            
+            currentLanguage = lang;
+            document.documentElement.lang = lang;
+            
+            // 更新语言显示
+            document.getElementById('current-language').textContent = lang.toUpperCase();
+            document.getElementById('footer-current-language').textContent = lang.toUpperCase();
+            
+            // 更新所有带有 data-i18n 属性的元素
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                const keys = key.split('.');
+                
+                let value = translations[lang];
+                for (const k of keys) {
+                    if (value[k] === undefined) return;
+                    value = value[k];
+                }
+                
+                if (element.tagName === 'META') {
+                    element.setAttribute('content', value);
+                } else if (element.tagName === 'TITLE') {
+                    element.textContent = value;
+                } else {
+                    element.textContent = value;
+                }
+            });
+        }
+
+        // 语言选择器事件
+        document.querySelectorAll('.language-option').forEach(option => {
+            option.addEventListener('click', function(e) {
+                e.preventDefault();
+                const lang = this.getAttribute('data-lang');
+                setLanguage(lang);
+            });
+        });
+
+        // 文件上传处理
+        const dropzone = document.getElementById('dropzone');
+        const fileInput = document.getElementById('file-input');
+        const generateBtn = document.getElementById('generate-btn');
+        const resultContainer = document.getElementById('result-container');
+        const originalImage = document.getElementById('original-image');
+        const enhancedImage = document.getElementById('enhanced-image');
+        const downloadBtn = document.getElementById('download-btn');
+        
+        // 拖放功能
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            dropzone.addEventListener(eventName, preventDefaults, false);
+        });
+        
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropzone.addEventListener(eventName, highlight, false);
+        });
+        
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropzone.addEventListener(eventName, unhighlight, false);
+        });
+        
+        function highlight() {
+            dropzone.classList.add('active');
+        }
+        
+        function unhighlight() {
+            dropzone.classList.remove('active');
+        }
+        
+        dropzone.addEventListener('drop', handleDrop, false);
+        
+        function handleDrop(e) {
+            const dt = e.dataTransfer;
+            const files = dt.files;
+            handleFiles(files);
+        }
+        
+        dropzone.addEventListener('click', () => {
+            fileInput.click();
+        });
+        
+        fileInput.addEventListener('change', function() {
+            handleFiles(this.files);
+        });
+        
+        function handleFiles(files) {
+            if (files.length > 0) {
+                const file = files[0];
+                if (file.type.match('image.*')) {
+                    const reader = new FileReader();
+                    
+                    reader.onload = function(e) {
+                        originalImage.src = e.target.result;
+                        // 在实际应用中，这里会调用API处理图像
+                        // 现在我们只是显示相同的图像作为演示
+                        enhancedImage.src = e.target.result;
+                        resultContainer.classList.remove('hidden');
+                    };
+                    
+                    reader.readAsDataURL(file);
+                }
+            }
+        }
+        
+        // 生成按钮点击事件
+        generateBtn.addEventListener('click', function() {
+            if (originalImage.src) {
+                // 在实际应用中，这里会调用API处理图像
+                // 现在我们只是显示一个加载状态
+                generateBtn.textContent = translations[currentLanguage].generator.processing;
+                generateBtn.disabled = true;
+                
+                setTimeout(() => {
+                    generateBtn.textContent = translations[currentLanguage].generator.generate_btn;
+                    generateBtn.disabled = false;
+                    resultContainer.classList.remove('hidden');
+                }, 2000);
+            }
+        });
+        
+        // 下载按钮点击事件
+        downloadBtn.addEventListener('click', function() {
+            if (enhancedImage.src) {
+                const link = document.createElement('a');
+                link.href = enhancedImage.src;
+                link.download = 'enhanced-lilo-stitch.jpg';
+                link.click();
+            }
+        });
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            loadTranslations();
+        });
+
+        // 加载API集成模块
+        let imageEnhancer;
+        
+        async function loadApiModule() {
+            try {
+                const module = await import('./api.js');
+                imageEnhancer = module.default;
+                console.log('API模块加载成功');
+            } catch (error) {
+                console.error('加载API模块失败:', error);
+            }
+        }
+        
+        // 处理图像增强
+        async function processImageEnhancement(file) {
+            if (!imageEnhancer) {
+                console.error('API模块未加载');
+                return null;
+            }
+            
+            try {
+                generateBtn.textContent = translations[currentLanguage].generator.processing;
+                generateBtn.disabled = true;
+                
+                // 调用API增强图像
+                const enhancedImageData = await imageEnhancer.enhanceImage(file);
+                
+                // 显示结果
+                enhancedImage.src = `data:image/jpeg;base64,${enhancedImageData}`;
+                resultContainer.classList.remove('hidden');
+                
+                return enhancedImageData;
+            } catch (error) {
+                console.error('图像增强失败:', error);
+                alert('图像增强失败，请重试');
+                return null;
+            } finally {
+                generateBtn.textContent = translations[currentLanguage].generator.generate_btn;
+                generateBtn.disabled = false;
+            }
+        }
+    </script>
+</body>
+</html>
